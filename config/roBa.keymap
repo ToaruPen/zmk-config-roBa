@@ -41,7 +41,7 @@
 
         muhennkann {
             bindings = <&to_layer_0 INT_MUHENKAN>;
-            key-positions = <11 10>;
+            key-positions = <10 11>;
         };
 
         double_quotation {
@@ -52,6 +52,11 @@
         eq {
             bindings = <&kp EQUAL>;
             key-positions = <24 25>;
+        };
+
+        hennkann {
+            bindings = <&to_layer_0 INTERNATIONAL_4>;
+            key-positions = <22 23>;
         };
     };
 
