@@ -85,14 +85,14 @@
             tapping-term-ms = <200>;
         };
         
-        zen_han_toggle: zen_han_toggle {
-            compatible = "zmk,behavior-tap-dance";
-            label = "ZEN_HAN_TOGGLE";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>; 
-            // 「JP_」プレフィックスを削除
-            bindings = <&kp ZENKAKU_HANKAKU &kp MUHENKAN>;
-        };
+         zen_han_toggle: zen_han_toggle {
+             compatible = "zmk,behavior-tap-dance";
+             label = "ZEN_HAN_TOGGLE";
+             #binding-cells = <0>;
+             tapping-term-ms = <200>; 
+             // 「JP_」プレフィックスを削除
+             bindings = <&kp ZENKAKU_HANKAKU>, <&kp MUHENKAN>;
+         };
     };
 
     keymap {
