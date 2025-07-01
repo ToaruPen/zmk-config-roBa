@@ -58,8 +58,8 @@
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
             bindings =
-                <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>,
-                <&macro_press>;
+                <&to 0 ¯o_param_1to1 &kp MACRO_PLACEHOLDER>,
+                <¯o_press>;
         };
 
         kakko_macro: kakko_macro {
@@ -76,11 +76,11 @@
             wait-ms = <30>;
             tap-ms = <30>;
             bindings =
-                <&macro_press>,
+                <¯o_press>,
                 <&kp LALT>,
-                <&macro_tap>,
+                <¯o_tap>,
                 <&kp GRAVE>,
-                <&macro_release>,
+                <¯o_release>,
                 <&kp LALT>;
         };
     };
@@ -98,8 +98,16 @@
             label = "ENCODER_SCROLL";
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>; // 時計回りで上、反時計回りで下
-    };
+        };
 
+        // ▼▼▼ ここから追記 ▼▼▼
+        encoder_scroll_horizontal: encoder_scroll_horizontal {
+            compatible = "zmk,behavior-sensor-rotate";
+            label = "ENCODER_SCROLL_HORIZONTAL";
+            #sensor-binding-cells = <0>;
+            bindings = <&msc SCRL_RIGHT>, <&msc SCRL_LEFT>; // 時計回りで右、反時計回りで左
+        };
+        // ▲▲▲ ここまで追記 ▲▲▲
     };
 
     keymap {
@@ -107,10 +115,10 @@
 
         default_layer {
             bindings = <
-&kp Q             &kp W         &kp E           &kp R               &kp T                                                    &kp Y      &kp U                &lt 5 I          &kp O        &kp P
-&lt 3 A           &mt LCTRL S   &mt LEFT_ALT D  &mt LEFT_COMMAND F  &kp G            &kp SLASH                    &kp TILDE  &kp H      &mt RIGHT_COMMAND J  &mt RIGHT_ALT K  &mt RCTRL L  &kp SEMICOLON
+&kp Q             &kp W         &kp E           &kp R               &kp T                                                    &kp Y      &kp U                < 5 I          &kp O        &kp P
+< 3 A           &mt LCTRL S   &mt LEFT_ALT D  &mt LEFT_COMMAND F  &kp G            &kp SLASH                    &kp TILDE  &kp H      &mt RIGHT_COMMAND J  &mt RIGHT_ALT K  &mt RCTRL L  &kp SEMICOLON
 &mt LEFT_SHIFT Z  &kp X         &kp C           &kp V               &kp B            &to 3                        &kp MINUS  &kp N      &kp M                &kp COMMA        &kp DOT      &kp QUESTION
-&kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT    &kp SPACE           &lt 2 BACKSPACE  &kp LANG_ZENKAKUHANKAKU      &kp TAB    &kp ENTER                                                     &kp F7
+&kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT    &kp SPACE           < 2 BACKSPACE  &kp LANG_ZENKAKUHANKAKU      &kp TAB    &kp ENTER                                                     &kp F7
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
@@ -159,6 +167,10 @@
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
             >;
+
+            // ▼▼▼ ここから追記 ▼▼▼
+            sensor-bindings = <&encoder_scroll_horizontal>;
+            // ▲▲▲ ここまで追記 ▲▲▲
         };
 
         layer_6 {
