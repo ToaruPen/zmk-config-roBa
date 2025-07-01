@@ -91,7 +91,7 @@
             #binding-cells = <0>;
             tapping-term-ms = <200>; 
             // 「JP_」プレフィックスを削除
-            bindings = <&kp ZENKAKU_HANKAKU>, <&kp MUHENKAN>;
+            bindings = <&kp ZENKAKU_HANKAKU &kp MUHENKAN>;
         };
     };
 
