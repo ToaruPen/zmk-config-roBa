@@ -49,7 +49,7 @@
 
         kagi_down_combo {
             bindings = <&kakko_macro>;
-            key-positions = <16 19>;
+            key-positions = <21 18>;
         };
     };
 
@@ -69,21 +69,10 @@
             #binding-cells = <0>;
             wait-ms = <40>;
             tap-ms = <40>;
-            bindings
-                = <&kp LBRC &kp DOWN &kp RBRC>;
+            bindings = <&kp LBRC &kp DOWN &kp RBRC>;
         };
 
         // Alt + ` を送信するマクロを追加
-        ime_toggle: ime_toggle {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <30>;
-            tap-ms = <30>;
-            bindings
-                = <&macro_press &kp LALT>,
-                  <&macro_tap &kp GRAVE>,
-                  <&macro_release &kp LALT>;
-        };
     };
 
     behaviors {
@@ -95,13 +84,14 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
         };
-        
+
         // Tap-Danceが新しいマクロを呼び出すように修正
+
         zen_han_toggle: zen_han_toggle {
             compatible = "zmk,behavior-tap-dance";
             label = "ZEN_HAN_TOGGLE";
             #binding-cells = <0>;
-            tapping-term-ms = <200>; 
+            tapping-term-ms = <200>;
             bindings = <&ime_toggle>, <&ime_toggle>;
         };
     };
@@ -111,10 +101,10 @@
 
         default_layer {
             bindings = <
-&kp Q             &kp W         &kp E           &kp R               &kp T                                                &kp Y      &kp U                &lt 5 I          &kp O        &kp P
-&mt CAPS A        &mt LCTRL S   &mt LEFT_ALT D  &mt LEFT_COMMAND F  &kp G            &kp SLASH           &kp TILDE       &kp H      &mt RIGHT_COMMAND J  &mt RIGHT_ALT K  &mt RCTRL L  &kp SEMICOLON
-&mt LEFT_SHIFT Z  &kp X         &kp C           &kp V               &kp B            &to 3               &kp MINUS       &kp N      &kp M                &kp COMMA        &kp DOT      &kp QUESTION
-&kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT    &kp SPACE           &lt 2 BACKSPACE  &zen_han_toggle     &mt ESCAPE TAB  &kp ENTER                                                     &kp F7
+&kp Q             &kp W         &kp E           &kp R               &kp T                                                 &kp Y      &kp U                &lt 5 I          &kp O        &kp P
+&mt LSHIFT A      &mt LCTRL S   &mt LEFT_ALT D  &mt LEFT_COMMAND F  &kp G            &kp SLASH            &kp TILDE       &kp H      &mt RIGHT_COMMAND J  &mt RIGHT_ALT K  &mt RCTRL L  &kp SEMICOLON
+&mt LEFT_SHIFT Z  &kp X         &kp C           &kp V               &kp B            &to 3                &kp MINUS       &kp N      &kp M                &kp COMMA        &kp DOT      &kp QUESTION
+&kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT    &kp SPACE           &lt 2 BACKSPACE  &zen_han_toggle      &mt ESCAPE TAB  &kp ENTER                                                     &kp F7
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
