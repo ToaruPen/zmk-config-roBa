@@ -10,12 +10,6 @@
 #include <dt-bindings/zmk/pointing.h>
 
 / {
-    /*
-     * ★ 修正点: エラーの原因となっていた &trackball ブロックをここから削除しました。
-     * このようなハードウェア関連の設定は、キーマップファイルではなく、
-     * ボードやシールドのオーバーレイファイル (.overlay) に記述する必要があります。
-     */
-
     // コンボ設定
     combos {
         compatible = "zmk,combos";
@@ -58,12 +52,14 @@
 
     // マクロ設定
     macros {
+        /*
+         * ★ 修正点: エラーの原因となっていた文字化けを修正し、マクロの定義をよりシンプルで標準的なものに変更しました。
+         * 「レイヤー0に移動し、パラメータで指定されたキーを1回タップする」という動作になります。
+         */
         to_layer_0: to_layer_0 {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
-            bindings =
-                <&to 0 ¯o_param_1to1 &kp MACRO_PLACEHOLDER>,
-                <¯o_press>;
+            bindings = <&to 0 ¯o_tap ¯o_param_1to1>;
         };
 
         kakko_macro: kakko_macro {
