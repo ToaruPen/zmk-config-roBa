@@ -17,20 +17,49 @@
     combos {
         compatible = "zmk,combos";
 
-        tab {               bindings = <&kp TAB>;             key-positions = <11 12>; };
-        shift_tab {         bindings = <&kp LS(TAB)>;         key-positions = <12 13>; };
-        muhennkann {        bindings = <&to_layer_0 INT_MUHENKAN>; key-positions = <10 11>; };
-        double_quotation {  bindings = <&kp DOUBLE_QUOTES>;   key-positions = <20 21>; };
-        eq {                bindings = <&kp EQUAL>;           key-positions = <24 25>; };
-        hennkann {          bindings = <&to_layer_0 INTERNATIONAL_4>; key-positions = <22 23>; };
-        kagi_down_combo {   bindings = <&kakko_macro>;        key-positions = <21 18>; };
+        tab {
+            bindings = <&kp TAB>;
+            key-positions = <11 12>;
+        };
+
+        shift_tab {
+            bindings = <&kp LS(TAB)>;
+            key-positions = <12 13>;
+        };
+
+        muhennkann {
+            bindings = <&to_layer_0 INT_MUHENKAN>;
+            key-positions = <10 11>;
+        };
+
+        double_quotation {
+            bindings = <&kp DOUBLE_QUOTES>;
+            key-positions = <20 21>;
+        };
+
+        eq {
+            bindings = <&kp EQUAL>;
+            key-positions = <24 25>;
+        };
+
+        hennkann {
+            bindings = <&to_layer_0 INTERNATIONAL_4>;
+            key-positions = <22 23>;
+        };
+
+        kagi_down_combo {
+            bindings = <&kakko_macro>;
+            key-positions = <21 18>;
+        };
     };
 
     macros {
         to_layer_0: to_layer_0 {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
-            bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>, <&macro_press>;
+            bindings =
+                <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>,
+                <&macro_press>;
         };
 
         kakko_macro: kakko_macro {
@@ -46,7 +75,13 @@
             #binding-cells = <0>;
             wait-ms = <30>;
             tap-ms = <30>;
-            bindings = <&macro_press &kp LALT>, <&macro_tap &kp GRAVE>, <&macro_release &kp LALT>;
+            bindings =
+                <&macro_press>,
+                <&kp LALT>,
+                <&macro_tap>,
+                <&kp GRAVE>,
+                <&macro_release>,
+                <&kp LALT>;
         };
     };
 
@@ -65,73 +100,76 @@
         default_layer {
             // ★ 修正点①: 構文エラーの原因となっていたコメントを bindings の外に移動しました。
             // ★ 修正点②: コードの桁ぞろえを修正し、可読性を向上させました。
+
             bindings = <
-&kp Q             &kp W              &kp E                 &kp R                 &kp T                               &kp Y      &kp U              &lt 5 I          &kp O        &kp P
-&lt 3 A           &mt LCTRL S        &mt LEFT_ALT D        &mt LEFT_COMMAND F    &kp G                               &kp SLASH  &kp TILDE          &kp H            &lt 7 J      &mt RIGHT_ALT K  &mt RCTRL L  &kp SEMICOLON
-&mt LEFT_SHIFT Z  &kp X              &kp C                 &kp V                 &kp B                               &to 3      &kp MINUS          &kp N            &kp M        &kp COMMA        &kp DOT      &kp QUESTION
-&kp LCTRL         &kp LEFT_WIN       &kp LEFT_ALT          &kp SPACE             &lt 2 BACKSPACE       &kp KANA   &kp TAB            &kp ENTER                                     &kp F7
+&kp Q             &kp W         &kp E           &kp R               &kp T                                                    &kp Y      &kp U    &lt 5 I          &kp O        &kp P
+&lt 3 A           &mt LCTRL S   &mt LEFT_ALT D  &mt LEFT_COMMAND F  &kp G            &kp SLASH                    &kp TILDE  &kp H      &lt 7 J  &mt RIGHT_ALT K  &mt RCTRL L  &kp SEMICOLON
+&mt LEFT_SHIFT Z  &kp X         &kp C           &kp V               &kp B            &to 3                        &kp MINUS  &kp N      &kp M    &kp COMMA        &kp DOT      &kp QUESTION
+&kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT    &kp SPACE           &lt 2 BACKSPACE  &kp LANG_ZENKAKUHANKAKU      &kp TAB    &kp ENTER                                         &kp F7
             >;
-            
+
             // デフォルトのエンコーダー挙動をスムーズな「上下スクロール」に設定
+
             sensor-bindings = <&mwh UP &mwh DOWN>;
         };
 
-        FUNCTION { // layer 1
+        FUNCTION {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                                &kp F1   &kp F2   &kp F3   &kp F4   &kp F5
-&trans  &trans  &trans  &trans  &trans  &trans      &kp F13           &kp F6   &kp F7   &kp F8   &kp F9   &kp F10
-&trans  &trans  &trans  &trans  &trans  &trans      &trans            &trans   &trans   &trans   &trans   &kp F11
-&trans  &trans  &trans  &trans  &trans  &trans      &trans            &trans                             &kp F12
+&trans  &trans  &trans  &trans  &trans                       &kp F1  &kp F2  &kp F3  &kp F4  &kp F5
+&trans  &trans  &trans  &trans  &trans  &trans      &kp F13  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10
+&trans  &trans  &trans  &trans  &trans  &trans      &trans   &trans  &trans  &trans  &trans  &kp F11
+&trans  &trans  &trans  &trans  &trans  &trans      &trans   &trans                          &kp F12
             >;
         };
 
-        NUM { // layer 2
+        NUM {
             bindings = <
-&kp MINUS                   &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp PLUS                                &kp CARET         &kp AMPERSAND      &kp TILDE       &kp LPAR      &kp RPAR
-&kp SLASH                   &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp ASTERISK  &kp LC(LA(KP_NUMBER_0))   &kp UNDERSCORE    &kp EXCLAMATION    &kp AT_SIGN     &kp HASH      &kp DOLLAR    &kp PERCENT
-&mt LEFT_SHIFT KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp PERIOD    &kp EQUAL                   &trans            &kp LEFT_BRACKET  &kp RIGHT_BRACKET &kp LEFT_BRACE  &kp RIGHT_BRACE &kp BACKSLASH
-&trans                      &trans           &trans           &trans           &trans        &trans                      &trans            &trans                                                          &kp PIPE
+&kp MINUS                   &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp PLUS                                                   &kp CARET         &kp AMPERSAND      &kp TILDE       &kp LPAR         &kp RPAR
+&kp SLASH                   &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp ASTERISK  &kp LC(LA(KP_NUMBER_0))      &kp UNDERSCORE  &kp EXCLAMATION   &kp AT_SIGN        &kp HASH        &kp DOLLAR       &kp PERCENT
+&mt LEFT_SHIFT KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp PERIOD    &kp EQUAL                    &trans          &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp BACKSLASH
+&trans                      &trans           &trans           &trans           &trans        &trans                       &trans          &trans                                                                &kp PIPE
             >;
         };
 
-        CONVENIENT { // layer 3
+        CONVENIENT {
             bindings = <
-&trans  &kp N7  &kp N8  &kp N9  &trans                                &kp LS(LPAR)  &kp LS(RPAR)  &kp LS(LBRC)  &kp LS(RBRC)   &kp LBKT
-&trans  &kp N4  &kp N5  &kp N6  &trans  &trans      &kp LS(EXCL)      &trans        &trans        &kp MINUS     &kp LS(TILDE)  &kp RBKT
-&trans  &kp N1  &kp N2  &kp N3  &trans  &to 0       &kp LS(QMARK)     &kp LEFT      &kp UP        &kp DOWN      &kp RIGHT      &kp F7
-&trans  &trans  &trans  &trans  &trans  &trans      &trans            &trans                                                   &trans
+&trans  &kp N7  &kp N8  &kp N9  &trans                             &kp LS(LPAR)  &kp LS(RPAR)  &kp LS(LBRC)  &kp LS(RBRC)   &kp LBKT
+&trans  &kp N4  &kp N5  &kp N6  &trans  &trans      &kp LS(EXCL)   &trans        &trans        &kp MINUS     &kp LS(TILDE)  &kp RBKT
+&trans  &kp N1  &kp N2  &kp N3  &trans  &to 0       &kp LS(QMARK)  &kp LEFT      &kp UP        &kp DOWN      &kp RIGHT      &kp F7
+&trans  &trans  &trans  &trans  &trans  &trans      &trans         &trans                                                   &trans
             >;
         };
 
-        MOUSE { // layer 4
+        MOUSE {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                                &trans  &trans    &trans    &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans            &trans  &mkp MB1  &mkp MB3  &mkp MB2  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans            &trans  &trans    &trans    &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans            &trans                                &trans
+&trans  &trans  &trans  &trans  &trans                      &trans  &trans    &trans    &trans    &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1  &mkp MB3  &mkp MB2  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans    &trans    &trans    &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                &trans
             >;
         };
 
-        SCROLL { // layer 5
+        SCROLL {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                                &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans            &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans            &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans            &trans                          &trans
+&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
             >;
         };
 
-        layer_6 { // layer 6
+        layer_6 {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                                &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
-&trans  &trans  &trans  &trans  &trans  &trans      &trans            &trans        &trans        &trans        &trans        &trans
-&trans  &kp N1  &kp N2  &kp N3  &trans  &trans      &bootloader       &trans        &trans        &trans        &trans        &bt BT_CLR
-&trans  &trans  &trans  &trans  &trans  &trans      &trans            &trans                                                    &bt BT_CLR_ALL
+&trans  &trans  &trans  &trans  &trans                           &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
+&trans  &trans  &trans  &trans  &trans  &trans      &trans       &trans        &trans        &trans        &trans        &trans
+&trans  &kp N1  &kp N2  &kp N3  &trans  &trans      &bootloader  &trans        &trans        &trans        &trans        &bt BT_CLR
+&trans  &trans  &trans  &trans  &trans  &trans      &trans       &trans                                                  &bt BT_CLR_ALL
             >;
         };
-        
+
         // Jキー長押しで有効になる、左右スクロール専用レイヤー
-        horizontal_scroll { // layer 7
+
+        horizontal_scroll {
             sensor-bindings = <&mwh RIGHT &mwh LEFT>;
         };
     };
