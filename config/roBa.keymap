@@ -97,14 +97,14 @@
         compatible = "zmk,keymap";
 
         default_layer {
-            // ===================================================================================================
-            //  ★ 変更点: &mt LSHIFT A を &lt 3 A に変更しました。
-            // ===================================================================================================
             bindings = <
 &kp Q             &kp W         &kp E           &kp R               &kp T                                                 &kp Y      &kp U                &lt 5 I          &kp O        &kp P
 &lt 3 A           &mt LCTRL S   &mt LEFT_ALT D  &mt LEFT_COMMAND F  &kp G            &kp SLASH            &kp TILDE       &kp H      &mt RIGHT_COMMAND J  &mt RIGHT_ALT K  &mt RCTRL L  &kp SEMICOLON
 &mt LEFT_SHIFT Z  &kp X         &kp C           &kp V               &kp B            &to 3                &kp MINUS       &kp N      &kp M                &kp COMMA        &kp DOT      &kp QUESTION
-&kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT    &kp SPACE           &lt 2 BACKSPACE  &zen_han_toggle      &mt ESCAPE TAB  &kp ENTER                                                     &kp F7
+// ==========================================================================================================================================
+// ★ 修正点: 複雑なマクロ &zen_han_toggle を、シンプルな「半角/全角」キーである &kp GRAVE に変更しました。
+// ==========================================================================================================================================
+&kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT    &kp SPACE           &lt 2 BACKSPACE  &kp GRAVE            &mt ESCAPE TAB  &kp ENTER                                                     &kp F7
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
