@@ -84,18 +84,15 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
         };
-
-        // --- ここから追加 ---
+        
         zen_han_toggle: zen_han_toggle {
             compatible = "zmk,behavior-tap-dance";
             label = "ZEN_HAN_TOGGLE";
             #binding-cells = <0>;
-            // 200ms以内に次のタップがなければシングルタップと判定。好みで調整してください。
             tapping-term-ms = <200>; 
-            // 1回タップで全角/半角キー、2回タップで無変換キーを送信
-            bindings = <&kp ZENKAKU_HANKAKU>, <&kp MUHENKAN>;
+            // プレフィックス JP_ を追加
+            bindings = <&kp JP_ZENKAKU_HANKAKU>, <&kp JP_MUHENKAN>;
         };
-        // --- ここまで追加 ---
     };
 
     keymap {
