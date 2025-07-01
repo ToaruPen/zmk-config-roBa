@@ -70,6 +70,16 @@
 
             label = "TO_LAYER_0";
         };
+
+    kakko_macro: kakko_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings
+                = <&kp LBRC &kp DOWN &kp RBRC>;
+        };
+
     };
 
     behaviors {
