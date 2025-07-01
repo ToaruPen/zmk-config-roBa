@@ -90,8 +90,8 @@
             label = "ZEN_HAN_TOGGLE";
             #binding-cells = <0>;
             tapping-term-ms = <200>; 
-            // プレフィックス JP_ を追加
-            bindings = <&kp JP_ZENKAKU_HANKAKU>, <&kp JP_MUHENKAN>;
+            // プレフィックス「JP_」を削除
+            bindings = <&kp ZENKAKU_HANKAKU>, <&kp MUHENKAN>;
         };
     };
 
