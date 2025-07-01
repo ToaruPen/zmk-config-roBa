@@ -102,10 +102,10 @@
             // ★ 修正点②: コードの桁ぞろえを修正し、可読性を向上させました。
 
             bindings = <
-&kp Q             &kp W         &kp E           &kp R               &kp T                                                    &kp Y      &kp U    &lt 5 I          &kp O        &kp P
-&lt 3 A           &mt LCTRL S   &mt LEFT_ALT D  &mt LEFT_COMMAND F  &kp G            &kp SLASH                    &kp TILDE  &kp H      &lt 7 J  &mt RIGHT_ALT K  &mt RCTRL L  &kp SEMICOLON
-&mt LEFT_SHIFT Z  &kp X         &kp C           &kp V               &kp B            &to 3                        &kp MINUS  &kp N      &kp M    &kp COMMA        &kp DOT      &kp QUESTION
-&kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT    &kp SPACE           &lt 2 BACKSPACE  &kp LANG_ZENKAKUHANKAKU      &kp TAB    &kp ENTER                                         &kp F7
+&kp Q             &kp W         &kp E           &kp R               &kp T                                                    &kp Y      &kp U                &lt 5 I          &kp O        &kp P
+&lt 3 A           &mt LCTRL S   &mt LEFT_ALT D  &mt LEFT_COMMAND F  &kp G            &kp SLASH                    &kp TILDE  &kp H      &mt RIGHT_COMMAND J  &mt RIGHT_ALT K  &mt RCTRL L  &kp SEMICOLON
+&mt LEFT_SHIFT Z  &kp X         &kp C           &kp V               &kp B            &to 3                        &kp MINUS  &kp N      &kp M                &kp COMMA        &kp DOT      &kp QUESTION
+&kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT    &kp SPACE           &lt 2 BACKSPACE  &kp LANG_ZENKAKUHANKAKU      &kp TAB    &kp ENTER                                                     &kp F7
             >;
 
             // デフォルトのエンコーダー挙動をスムーズな「上下スクロール」に設定
@@ -169,8 +169,6 @@
 
         // Jキー長押しで有効になる、左右スクロール専用レイヤー
 
-        horizontal_scroll {
-            sensor-bindings = <&mwh RIGHT &mwh LEFT>;
-        };
+        horizontal_scroll { sensor-bindings = <&mwh RIGHT &mwh LEFT>; };
     };
 };
