@@ -73,6 +73,17 @@
                 = <&kp LBRC &kp DOWN &kp RBRC>;
         };
 
+        // Alt + ` を送信するマクロを追加
+        ime_toggle: ime_toggle {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <30>;
+            tap-ms = <30>;
+            bindings
+                = <&macro_press &kp LALT>,
+                  <&macro_tap &kp GRAVE>,
+                  <&macro_release &kp LALT>;
+        };
     };
 
     behaviors {
@@ -85,14 +96,14 @@
             tapping-term-ms = <200>;
         };
         
-         zen_han_toggle: zen_han_toggle {
-             compatible = "zmk,behavior-tap-dance";
-             label = "ZEN_HAN_TOGGLE";
-             #binding-cells = <0>;
-             tapping-term-ms = <200>; 
-             // 「JP_」プレフィックスを削除
-             bindings = <&kp ZENKAKU_HANKAKU>, <&kp MUHENKAN>;
-         };
+        // Tap-Danceが新しいマクロを呼び出すように修正
+        zen_han_toggle: zen_han_toggle {
+            compatible = "zmk,behavior-tap-dance";
+            label = "ZEN_HAN_TOGGLE";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>; 
+            bindings = <&ime_toggle>, <&ime_toggle>;
+        };
     };
 
     keymap {
