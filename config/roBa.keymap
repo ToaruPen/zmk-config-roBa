@@ -29,11 +29,6 @@
             key-positions = <12 13>;
         };
 
-        muhennkann {
-            bindings = <&to_layer_0 INT_MUHENKAN>;
-            key-positions = <10 11>;
-        };
-
         double_quotation {
             bindings = <&kp DOUBLE_QUOTES>;
             key-positions = <20 21>;
@@ -44,14 +39,14 @@
             key-positions = <24 25>;
         };
 
-        hennkann {
-            bindings = <&to_layer_0 INTERNATIONAL_4>;
-            key-positions = <22 23>;
-        };
-
         kagi_down_combo {
             bindings = <&kakko_macro>;
             key-positions = <21 18>;
+        };
+
+        henkan {
+            bindings = <&ime_toggle>;
+            key-positions = <22 23>;
         };
     };
 
@@ -139,10 +134,10 @@
 
         CONVENIENT {
             bindings = <
-&trans        &kp N7  &kp N8  &kp N9  &trans                             &kp LS(LPAR)  &kp LS(RPAR)  &kp LS(LBRC)  &kp LS(RBRC)   &kp LBKT
-&trans        &kp N4  &kp N5  &kp N6  &trans  &trans      &kp LS(EXCL)   &trans        &trans        &kp MINUS     &kp LS(TILDE)  &kp RBKT
-&kp NUMBER_0  &kp N1  &kp N2  &kp N3  &trans  &to 0       &kp LS(QMARK)  &kp LEFT      &kp UP        &kp DOWN      &kp RIGHT      &kp F7
-&trans        &trans  &trans  &trans  &trans  &trans      &trans         &trans                                                   &trans
+&trans        &kp N7  &kp N8  &kp N9  &trans                             &kp LS(LPAR)  &kp LS(RPAR)    &kp LS(LBRC)  &kp LS(RBRC)    &kp LBKT
+&trans        &kp N4  &kp N5  &kp N6  &trans  &trans      &kp LS(EXCL)   &trans        &trans          &kp MINUS     &kp LS(TILDE)   &kp RBKT
+&kp NUMBER_0  &kp N1  &kp N2  &kp N3  &trans  &to 0       &kp LS(QMARK)  &trans        &kp LEFT_ARROW  &kp UP_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW
+&trans        &trans  &trans  &trans  &trans  &trans      &trans         &trans                                                      &trans
             >;
         };
 
