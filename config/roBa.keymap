@@ -60,8 +60,6 @@
             bindings =
                 <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>,
                 <&macro_press>;
-
-            label = "TO_LAYER_0";
         };
 
         kakko_macro: kakko_macro {
@@ -78,32 +76,17 @@
             wait-ms = <30>;
             tap-ms = <30>;
             bindings =
-                <&macro_press>,
-                <&kp LALT>,
-                <&macro_tap>,
-                <&kp GRAVE>,
-                <&macro_release>,
-                <&kp LALT>;
+                <&macro_press &kp LALT>,
+                <&macro_tap &kp GRAVE>,
+                <&macro_release &kp LALT>;
         };
-
-        // Alt + ` を送信するマクロを追加
     };
 
     behaviors {
-        lt_to_layer_0: lt_to_layer_0 {
-            compatible = "zmk,behavior-hold-tap";
-            label = "LAYER_TAP_TO_0";
-            bindings = <&mo>, <&to_layer_0>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-        };
-
-        // Tap-Danceが新しいマクロを呼び出すように修正
+        // 以下の lt_to_layer_0 は未使用でエラーの原因になるため削除しました。
 
         zen_han_toggle: zen_han_toggle {
             compatible = "zmk,behavior-tap-dance";
-            label = "ZEN_HAN_TOGGLE";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&ime_toggle>, <&ime_toggle>;
@@ -114,9 +97,12 @@
         compatible = "zmk,keymap";
 
         default_layer {
+            // ===================================================================================================
+            //  ★ 変更点: &mt LSHIFT A を &lt 3 A に変更しました。
+            // ===================================================================================================
             bindings = <
 &kp Q             &kp W         &kp E           &kp R               &kp T                                                 &kp Y      &kp U                &lt 5 I          &kp O        &kp P
-&mt LSHIFT A      &mt LCTRL S   &mt LEFT_ALT D  &mt LEFT_COMMAND F  &kp G            &kp SLASH            &kp TILDE       &kp H      &mt RIGHT_COMMAND J  &mt RIGHT_ALT K  &mt RCTRL L  &kp SEMICOLON
+&lt 3 A           &mt LCTRL S   &mt LEFT_ALT D  &mt LEFT_COMMAND F  &kp G            &kp SLASH            &kp TILDE       &kp H      &mt RIGHT_COMMAND J  &mt RIGHT_ALT K  &mt RCTRL L  &kp SEMICOLON
 &mt LEFT_SHIFT Z  &kp X         &kp C           &kp V               &kp B            &to 3                &kp MINUS       &kp N      &kp M                &kp COMMA        &kp DOT      &kp QUESTION
 &kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT    &kp SPACE           &lt 2 BACKSPACE  &zen_han_toggle      &mt ESCAPE TAB  &kp ENTER                                                     &kp F7
             >;
@@ -145,7 +131,7 @@
         CONVENIENT {
             bindings = <
 &trans  &kp N7  &kp N8  &kp N9  &trans                             &kp LS(LPAR)  &kp LS(RPAR)  &kp LS(LBRC)  &kp LS(RBRC)   &kp LEFT_BRACKET
-&trans  &kp N4  &kp N5  &kp N6  &trans  &trans      &kp LS(EXCL)   &kp LBKT      &kp RBKT      &kp MINUS     &kp LS(TILDE)  &kp RIGHT_BRACKET
+&trans  &kp N4  &kp N5  &kp N6  &trans  &trans      &kp LS(EXCL)   &trans        &trans        &kp MINUS     &kp LS(TILDE)  &kp RIGHT_BRACKET
 &trans  &kp N1  &kp N2  &kp N3  &trans  &to 0       &kp LS(QMARK)  &kp LEFT      &kp UP        &kp DOWN      &kp RIGHT      &kp F7
 &trans  &trans  &trans  &trans  &trans  &trans      &trans         &trans                                                   &trans
             >;
