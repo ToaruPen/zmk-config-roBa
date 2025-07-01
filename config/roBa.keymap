@@ -100,7 +100,7 @@
 &lt 3 A           &mt LCTRL S   &mt LEFT_ALT D  &mt LEFT_COMMAND F  &kp G            &kp SLASH            &kp TILDE       &kp H      &mt RIGHT_COMMAND J  &mt RIGHT_ALT K  &mt RCTRL L  &kp SEMICOLON
 &mt LEFT_SHIFT Z  &kp X         &kp C           &kp V               &kp B            &to 3                &kp MINUS       &kp N      &kp M                &kp COMMA        &kp DOT      &kp QUESTION
 // ===================================================================================================================
-// ★ 修正点: &mt ESCAPE TAB を &kp TAB に修正しました。
+// ★ 修正点: 文法エラーの原因となっていた &mt ESCAPE TAB を、正しい &kp TAB に修正しました。
 // ===================================================================================================================
 &kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT    &kp SPACE           &lt 2 BACKSPACE  &kp KANA             &kp TAB         &kp ENTER                                                     &kp F7
             >;
