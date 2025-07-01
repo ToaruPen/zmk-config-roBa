@@ -11,16 +11,10 @@
 
 / {
     /*
-     * ★ 修正点: エラーの原因となっていた &mt ブロックをここから削除しました。
-     * このようなグローバルな設定は、キーマップファイルではなく、
+     * ★ 修正点: エラーの原因となっていた &trackball ブロックをここから削除しました。
+     * このようなハードウェア関連の設定は、キーマップファイルではなく、
      * ボードやシールドのオーバーレイファイル (.overlay) に記述する必要があります。
      */
-
-    // グローバル設定
-    &trackball {
-        automouse-layer = <4>; // MOUSEレイヤー
-        scroll-layers = <5>;   // SCROLLレイヤー
-    };
 
     // コンボ設定
     combos {
@@ -116,12 +110,6 @@
 &mt LEFT_SHIFT Z      &kp X                 &kp C                 &kp V                  &kp B                  &to 3                     &kp MINUS  &kp N      &kp M                &kp COMMA      &kp DOT        &kp QUESTION
 &kp LCTRL             &kp LEFT_WIN          &kp LEFT_ALT          &kp SPACE              < 2 BACKSPACE        &kp LANG_ZENKAKUHANKAKU    &kp TAB    &kp ENTER                                                      &kp F7
             >;
-
-            /*
-             * ★ 修正点①: default_layer から sensor-bindings を削除しました。
-             * トラックボールのデフォルトの動きはポインター移動であり、ここにスクロール設定を記述する必要はありません。
-             * これがエラーの直接の原因でした。
-             */
         };
 
         FUNCTION { // layer 1
@@ -168,11 +156,6 @@
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans                          &trans
             >;
 
-            /*
-             * ★ 修正点②: SCROLLレイヤーに sensor-bindings を追加しました。
-             * &mwh の代わりに、より確実な &kp MWH_UP/DOWN を使用します。
-             * これで 'I'キー長押しでトラックボールが上下スクロールになります。
-             */
             sensor-bindings = <&kp MWH_UP &kp MWH_DOWN>;
         };
 
@@ -185,12 +168,6 @@
             >;
         };
 
-        /*
-         * ★ 修正点③: 水平スクロール用のレイヤーを修正しました。
-         * こちらも &kp MWH_RIGHT/LEFT を使用します。
-         * このレイヤーを有効にするには、例えば default_layer の 'J' キーを
-         * < 7 J のように変更して、このレイヤー(layer_7)を呼び出す必要があります。
-         */
         horizontal_scroll: layer_7 { // layer 7
             sensor-bindings = <&kp MWH_RIGHT &kp MWH_LEFT>;
         };
