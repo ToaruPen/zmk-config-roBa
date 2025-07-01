@@ -1,4 +1,15 @@
 #include "roBa.dtsi"
+#include <dt-bindings/zmk/pointing.h>
+
+&trackball {
+    automouse-layer = <4>; // MOUSEレイヤー
+    scroll-layers = <5>;   // SCROLLレイヤー
+};
+
+&mt {
+    flavor = "balanced";
+    quick-tap-ms = <0>;
+};
 
 &default_transform {
     col-offset = <6>;
