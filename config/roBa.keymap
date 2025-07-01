@@ -87,12 +87,8 @@
             #binding-cells = <0>;
             wait-ms = <30>;
             tap-ms = <30>;
-            bindings =
-                <¯o_press &kp LCTRL>,   // Controlキーを押しっぱなしにする
-                <¯o_tap &kp SPACE>,     // Spaceキーをタップする
-                <¯o_release &kp LCTRL>; // Controlキーを離す
+            bindings = <&kp LCTRL &kp SPACE &kp LCTRL>; // Controlキーを離す
         };
-
     };
 
     behaviors {
@@ -111,7 +107,6 @@
 
             tap-ms = <20>;
         };
-
     };
 
     keymap {
@@ -141,7 +136,7 @@
             bindings = <
 &kp NUMBER_1                &kp NUMBER_2     &kp NUMBER_3     &kp NUMBER_4     &kp N5                                                &kp NUMBER_6     &kp N7            &kp N8             &kp N9          &kp N0
 &kp SLASH                   &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp ASTERISK  &kp LC(LA(KP_NUMBER_0))      &kp TILDE  &kp EXCLAMATION  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp DOLLAR      &kp PERCENT
-&mt LEFT_SHIFT KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp PERIOD    &tog 0                       &kp MINUS  &kp QUESTION     &kp LEFT_ARROW    &kp UP_ARROW       &kp DOWN_ARROW  &kp RIGHT_ARROW
+&mt LEFT_SHIFT KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp PERIOD    &to 0                        &kp MINUS  &kp QUESTION     &kp LEFT_ARROW    &kp UP_ARROW       &kp DOWN_ARROW  &kp RIGHT_ARROW
 &trans                      &trans           &trans           &trans           &trans        &trans                       &trans     &trans                                                                &kp PIPE
             >;
         };
