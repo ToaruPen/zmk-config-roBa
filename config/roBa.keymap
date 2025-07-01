@@ -93,7 +93,7 @@
             // 200ms以内に次のタップがなければシングルタップと判定。好みで調整してください。
             tapping-term-ms = <200>; 
             // 1回タップで全角/半角キー、2回タップで無変換キーを送信
-            bindings = <&kp ZENKAKU_HANKAKU>, <&kp MUHENKAN>;
+            bindings = <&kp ZENKAKU_HANKAKU &kp MUHENKAN>;
         };
         // --- ここまで追加 ---
     };
