@@ -10,12 +10,13 @@
 #include <dt-bindings/zmk/pointing.h>
 
 / {
-    // グローバル設定
-    &mt {
-        flavor = "balanced";
-        quick-tap-ms = <0>;
-    };
+    /*
+     * ★ 修正点: エラーの原因となっていた &mt ブロックをここから削除しました。
+     * このようなグローバルな設定は、キーマップファイルではなく、
+     * ボードやシールドのオーバーレイファイル (.overlay) に記述する必要があります。
+     */
 
+    // グローバル設定
     &trackball {
         automouse-layer = <4>; // MOUSEレイヤー
         scroll-layers = <5>;   // SCROLLレイヤー
@@ -67,8 +68,8 @@
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
             bindings =
-                <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>,
-                <&macro_press>;
+                <&to 0 ¯o_param_1to1 &kp MACRO_PLACEHOLDER>,
+                <¯o_press>;
         };
 
         kakko_macro: kakko_macro {
@@ -85,11 +86,11 @@
             wait-ms = <30>;
             tap-ms = <30>;
             bindings =
-                <&macro_press>,
+                <¯o_press>,
                 <&kp LALT>,
-                <&macro_tap>,
+                <¯o_tap>,
                 <&kp GRAVE>,
-                <&macro_release>,
+                <¯o_release>,
                 <&kp LALT>;
         };
     };
@@ -110,10 +111,10 @@
 
         default_layer {
             bindings = <
-&kp Q                 &kp W                 &kp E                 &kp R                  &kp T                                          &kp Y      &kp U      &lt 5 I            &kp O          &kp P
-&lt 3 A              &mt LCTRL S           &mt LEFT_ALT D        &mt LEFT_COMMAND F     &kp G                  &kp SLASH                 &kp TILDE  &kp H      &mt RIGHT_COMMAND J  &mt RIGHT_ALT K  &mt RCTRL L    &kp SEMICOLON
+&kp Q                 &kp W                 &kp E                 &kp R                  &kp T                                          &kp Y      &kp U      < 5 I            &kp O          &kp P
+< 3 A              &mt LCTRL S           &mt LEFT_ALT D        &mt LEFT_COMMAND F     &kp G                  &kp SLASH                 &kp TILDE  &kp H      &mt RIGHT_COMMAND J  &mt RIGHT_ALT K  &mt RCTRL L    &kp SEMICOLON
 &mt LEFT_SHIFT Z      &kp X                 &kp C                 &kp V                  &kp B                  &to 3                     &kp MINUS  &kp N      &kp M                &kp COMMA      &kp DOT        &kp QUESTION
-&kp LCTRL             &kp LEFT_WIN          &kp LEFT_ALT          &kp SPACE              &lt 2 BACKSPACE        &kp LANG_ZENKAKUHANKAKU    &kp TAB    &kp ENTER                                                      &kp F7
+&kp LCTRL             &kp LEFT_WIN          &kp LEFT_ALT          &kp SPACE              < 2 BACKSPACE        &kp LANG_ZENKAKUHANKAKU    &kp TAB    &kp ENTER                                                      &kp F7
             >;
 
             /*
@@ -188,7 +189,7 @@
          * ★ 修正点③: 水平スクロール用のレイヤーを修正しました。
          * こちらも &kp MWH_RIGHT/LEFT を使用します。
          * このレイヤーを有効にするには、例えば default_layer の 'J' キーを
-         * &lt 7 J のように変更して、このレイヤー(layer_7)を呼び出す必要があります。
+         * < 7 J のように変更して、このレイヤー(layer_7)を呼び出す必要があります。
          */
         horizontal_scroll: layer_7 { // layer 7
             sensor-bindings = <&kp MWH_RIGHT &kp MWH_LEFT>;
