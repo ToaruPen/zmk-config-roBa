@@ -92,6 +92,14 @@
             tapping-term-ms = <200>;
             bindings = <&ime_toggle>, <&ime_toggle>;
         };
+
+        encoder_scroll: encoder_scroll {
+            compatible = "zmk,behavior-sensor-rotate";
+            label = "ENCODER_SCROLL";
+            #sensor-binding-cells = <0>;
+            bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>; // 時計回りで上、反時計回りで下
+    };
+
     };
 
     keymap {
