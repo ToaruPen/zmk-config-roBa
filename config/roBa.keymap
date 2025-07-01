@@ -100,9 +100,9 @@
             label = "ENCODER_MSC_DOWN_UP";
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
+
             tap-ms = <20>;
         };
-
     };
 
     keymap {
@@ -111,7 +111,7 @@
         default_layer {
             bindings = <
 &kp Q             &kp W         &kp E           &kp R               &kp T                                                    &kp Y      &kp U                &lt 5 I          &kp O        &kp P
-&lt 3 A           &mt LCTRL S   &mt LEFT_ALT D  &mt LEFT_COMMAND F  &kp G            &kp SLASH                    &kp TILDE  &kp H      &mt RIGHT_COMMAND J  &mt RIGHT_ALT K  &mt RCTRL L  &kp SEMICOLON
+&lt 3 A           &mt LCTRL S   &mt LEFT_ALT D  &mt LEFT_COMMAND F  &kp G            &kp AT_SIGN                  &kp TILDE  &kp H      &mt RIGHT_COMMAND J  &mt RIGHT_ALT K  &mt RCTRL L  &kp SEMICOLON
 &mt LEFT_SHIFT Z  &kp X         &kp C           &kp V               &kp B            &to 3                        &kp MINUS  &kp N      &kp M                &kp COMMA        &kp DOT      &kp QUESTION
 &kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT    &kp SPACE           &lt 2 BACKSPACE  &kp LANG_ZENKAKUHANKAKU      &kp TAB    &kp ENTER                                                     &kp F7
             >;
@@ -139,10 +139,10 @@
 
         CONVENIENT {
             bindings = <
-&trans  &kp N7  &kp N8  &kp N9  &trans                             &kp LS(LPAR)  &kp LS(RPAR)  &kp LS(LBRC)  &kp LS(RBRC)   &kp LBKT
-&trans  &kp N4  &kp N5  &kp N6  &trans  &trans      &kp LS(EXCL)   &trans        &trans        &kp MINUS     &kp LS(TILDE)  &kp RBKT
-&trans  &kp N1  &kp N2  &kp N3  &trans  &to 0       &kp LS(QMARK)  &kp LEFT      &kp UP        &kp DOWN      &kp RIGHT      &kp F7
-&trans  &trans  &trans  &trans  &trans  &trans      &trans         &trans                                                   &trans
+&trans        &kp N7  &kp N8  &kp N9  &trans                             &kp LS(LPAR)  &kp LS(RPAR)  &kp LS(LBRC)  &kp LS(RBRC)   &kp LBKT
+&trans        &kp N4  &kp N5  &kp N6  &trans  &trans      &kp LS(EXCL)   &trans        &trans        &kp MINUS     &kp LS(TILDE)  &kp RBKT
+&kp NUMBER_0  &kp N1  &kp N2  &kp N3  &trans  &to 0       &kp LS(QMARK)  &kp LEFT      &kp UP        &kp DOWN      &kp RIGHT      &kp F7
+&trans        &trans  &trans  &trans  &trans  &trans      &trans         &trans                                                   &trans
             >;
         };
 
