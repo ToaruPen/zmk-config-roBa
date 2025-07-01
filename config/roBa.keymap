@@ -98,6 +98,14 @@
 
             tap-ms = <20>;
         };
+
+        macro_lang_sw: macro_lang_sw {
+            compatible = "zmk,behavior-macro";
+            label = "MACRO_LANG_SW";
+            #binding-cells = <0>;
+            bindings = <&kp LCTRL &kp SPACE>;
+        };
+
     };
 
     keymap {
