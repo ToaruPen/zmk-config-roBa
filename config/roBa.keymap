@@ -115,8 +115,8 @@
         default_layer {
             bindings = <
 &kp Q             &kp W         &kp E           &kp R               &kp T                                      &kp Y      &kp U                &lt 5 I          &kp O        &kp P
-&kp A             &mt LCTRL S   &mt LEFT_ALT D  &mt LEFT_COMMAND F  &kp G          &kp AT_SIGN      &kp MINUS  &kp H      &mt RIGHT_COMMAND J  &mt RIGHT_ALT K  &mt RCTRL L  &kp SEMICOLON
-&mt LEFT_SHIFT Z  &kp X         &kp C           &kp V               &kp B          &tog 2           &kp TILDE  &kp N      &kp M                &kp COMMA        &kp DOT      &kp QUESTION
+&kp A             &mt LCTRL S   &mt LEFT_ALT D  &mt LEFT_COMMAND F  &kp G          &kp AT_SIGN      &kp MINUS  &kp H      &mt RIGHT_COMMAND J  &mt RIGHT_ALT K  &mt RCTRL L  &mt RIGHT_SHIFT SEMI
+&mt LEFT_SHIFT Z  &kp X         &kp C           &kp V               &kp B          &tog 2           &kp TILDE  &kp N      &kp M                &kp COMMA        &kp DOT      &kp SLASH
 &kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT    &kp SPACE           &kp BACKSPACE  &mo 3            &kp TAB    &kp ENTER                                                     &kp F7
             >;
 
@@ -135,8 +135,8 @@
         NUM {
             bindings = <
 &kp NUMBER_1                &kp NUMBER_2     &kp NUMBER_3     &kp NUMBER_4     &kp N5                                                &kp NUMBER_6     &kp N7            &kp N8             &kp N9          &kp N0
-&kp SLASH                   &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp ASTERISK  &kp LC(LA(KP_NUMBER_0))      &kp TILDE  &kp EXCLAMATION  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp DOLLAR      &kp PERCENT
-&mt LEFT_SHIFT KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp PERIOD    &to 0                        &kp MINUS  &kp QUESTION     &kp LEFT_ARROW    &kp UP_ARROW       &kp DOWN_ARROW  &kp RIGHT_ARROW
+&kp SLASH                   &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp ASTERISK  &kp LC(LA(KP_NUMBER_0))      &kp MINUS  &kp EXCLAMATION  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp DOLLAR      &kp PERCENT
+&mt LEFT_SHIFT KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp PERIOD    &to 0                        &kp TILDE  &kp QUESTION     &kp LEFT_ARROW    &kp UP_ARROW       &kp DOWN_ARROW  &kp RIGHT_ARROW
 &trans                      &trans           &trans           &trans           &trans        &trans                       &trans     &trans                                                                &kp PIPE
             >;
         };
