@@ -24,11 +24,6 @@
             key-positions = <11 12>;
         };
 
-        shift_tab {
-            bindings = <&kp LS(TAB)>;
-            key-positions = <12 13>;
-        };
-
         double_quotation {
             bindings = <&kp APOS>;
             key-positions = <20 21>;
@@ -47,6 +42,16 @@
         henkan {
             bindings = <&ime_toggle>;
             key-positions = <22 23>;
+        };
+
+        Escape {
+            bindings = <&kp ESCAPE>;
+            key-positions = <0 1>;
+        };
+
+        Delete {
+            bindings = <&kp DELETE>;
+            key-positions = <8 9>;
         };
     };
 
