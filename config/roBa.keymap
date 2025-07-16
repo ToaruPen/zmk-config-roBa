@@ -141,7 +141,7 @@
             bindings = <
 &kp NUMBER_1   &kp NUMBER_2   &kp NUMBER_3  &kp NUMBER_4  &kp N5                                               &kp NUMBER_6     &kp N7            &kp N8             &kp N9          &kp N0
 &kp BACKSLASH  &kp KP_DIVIDE  &kp ASTERISK  &kp KP_MINUS  &kp KP_PLUS  &kp LC(LA(KP_NUMBER_0))      &kp MINUS  &kp EXCLAMATION  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp DOLLAR      &kp PERCENT
-&trans         &trans         &trans        &kp KP_COMMA  &kp PERIOD   &to 0                        &kp TILDE  &kp QUESTION     &kp LEFT_ARROW    &kp UP_ARROW       &kp DOWN_ARROW  &kp RIGHT_ARROW
+&trans         &trans         &trans        &kp COMMA     &kp PERIOD   &to 0                        &kp TILDE  &kp QUESTION     &kp LEFT_ARROW    &kp UP_ARROW       &kp DOWN_ARROW  &kp RIGHT_ARROW
 &trans         &trans         &trans        &trans        &trans       &trans                       &trans     &trans                                                                &kp PIPE
             >;
         };
